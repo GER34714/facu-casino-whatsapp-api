@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <title>Facu Casino™ - Tu lugar de suerte</title>
+  <meta name="description" content="Facu Casino™ - La mejor experiencia de juego virtual en Argentina.">
+
+  <meta property="og:title" content="Facu Casino™ - Tu lugar de suerte">
+  <meta property="og:description" content="La mejor experiencia de juego virtual en Argentina. Cargá fichas, jugá y ganá con responsabilidad. ¡Entrá ahora!">
+  <meta property="og:image" content="https://iili.io/FZTQsZx.webp">
+  <meta property="og:url" content="https://facucasino.onrender.com/">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Facu Casino™ - Tu lugar de suerte">
+  <meta name="twitter:description" content="La mejor experiencia de juego virtual en Argentina. Cargá fichas, jugá y ganá con responsabilidad. ¡Entrá ahora!">
+  <meta name="twitter:image" content="https://iili.io/FZTQsZx.webp">
+
+  <link rel="icon" href="https://iili.io/FZTQsZx.webp" />
+
+  <style>
+    /* (Aquí va todo tu CSS, tal como lo tenías) */
+    /* ... */
+  </style>
+</head>
+<body>
+  <!-- Tu estructura con partículas, header, logo, etc. -->
+
+  <main>
+    <p>La mejor experiencia de juego virtual en Argentina.<br />Cargá fichas, jugá y ganá con responsabilidad.</p>
+
+    <a id="whatsappBtn" href="#" class="button" rel="noopener noreferrer" target="_blank">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" loading="lazy">
+      Contactanos por WhatsApp
+    </a>
+  </main>
+
+  <footer>
+    <!-- Tu footer completo tal como lo tenías -->
+  </footer>
+
+  <script>
+    document.getElementById("whatsappBtn").addEventListener("click", async function (e) {
+      e.preventDefault();
+
+      try {
+        const response = await fetch("https://facu-casino-whatsapp-api.onrender.com/api/whatsapp");
+        const agente = await response.json();
+        window.open(`https://wa.me/${agente.numero}?text=${agente.mensaje}`, "_blank`);
+      } catch (error) {
+        console.error("Error al obtener agente:", error);
+        alert("No se pudo conectar con el servidor de WhatsApp.");
+      }
+    });
+  </script>
+</body>
+</html>
