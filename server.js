@@ -4,7 +4,6 @@ import cors from "cors";
 const app = express();
 app.use(cors());
 
-// Lista de agentes con número y mensaje
 const agentes = [
   { numero: "541132525913", mensaje: "Hola%20martin,%20me%20creas%20un%20usuario?" },
   { numero: "541171334027", mensaje: "Hola%20lucas,%20me%20creas%20un%20usuario?" },
@@ -14,12 +13,11 @@ const agentes = [
   { numero: "541123365501", mensaje: "hola%20me%20creas%20un%20usuario?%20🤚🍀" }
 ];
 
-let index = 0; // empieza en el primero
+let index = 0;
 
-// Endpoint que devuelve el número actual y avanza al siguiente
 app.get("/api/whatsapp", (req, res) => {
   const agente = agentes[index];
-  index = (index + 1) % agentes.length; // avanza y cicla
+  index = (index + 1) % agentes.length;
   res.json(agente);
 });
 
